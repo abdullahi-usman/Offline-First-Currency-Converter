@@ -41,9 +41,9 @@ function getCountries() {
 }
 
 function registerServiceWorker() {
-    if (!navigator.serviceWorker) return
+    if (!navigator.serviceWorker) return;
 
-    navigator.serviceWorker.register('/sw.js', {scope: './'}).then((reg) => {
+    navigator.serviceWorker.register('/sw.js').then((reg) => {
         if (!navigator.serviceWorker.controller) return;
         
         console.log('service worker registered successfully...!' );
@@ -63,6 +63,8 @@ function registerServiceWorker() {
         });
 
 
+    }).catch(reason => {
+        console.log ('Failed to register service worker :',  reason);
     });
 
     self.trackInstalling = function (worker) {
