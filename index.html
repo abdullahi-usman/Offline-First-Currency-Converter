@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="sw.js"></script>
     <script src="idb.js"></script>
     <script src="main.js"></script>
 
@@ -41,6 +40,12 @@
             color: green
         }
 
+        .dropdown-menu-center {
+            float: initial;
+            right: 20%;
+            left: 20%;
+        }
+
     </style>
 </head>
 <body>
@@ -68,7 +73,7 @@
                     <br/>
                     <label for="currencies-to-button" id="currencies-from-label"></label>
 
-                    <ul class="dropdown-menu scrollable-menu" id="currencies-from" role="menu">
+                    <ul class="dropdown-menu dropdown-menu-center scrollable-menu" id="currencies-from" role="menu">
                        
                     </ul>
 
@@ -85,7 +90,7 @@
                     <br/>
                     <label for="currencies-to-button" id="currencies-to-label"></label>
 
-                    <ul class="dropdown-menu scrollable-menu" id="currencies-to" role="menu">
+                    <ul class="dropdown-menu dropdown-menu-center scrollable-menu" id="currencies-to" role="menu">
 
                     </ul>
 

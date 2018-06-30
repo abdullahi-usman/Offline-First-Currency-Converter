@@ -1,5 +1,5 @@
 {
-  "name": "simple-serviceworker-tutorial",
+  "name": "Offline-First-Currency-Converter",
   "private": true,
   "scripts": {
     "start": "http-server -c-1 -p 8778"
