@@ -1,0 +1,13 @@
+{
+  "name": "simple-serviceworker-tutorial",
+  "private": true,
+  "scripts": {
+    "start": "http-server -c-1 -p 8778"
+  },
+  "devDependencies": {
+    "http-server": "0.8.5"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1"
+  }
+}
