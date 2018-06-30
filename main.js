@@ -159,7 +159,6 @@ function convertCurrencies() {
     const url = `https://free.currencyconverterapi.com/api/v5/convert?q=${fromCurrency},${toCurrency}&compact=ultra`;
 
     fetch(url).then(response => {
-        console.log(response);
 
         convertButton.removeAttribute('disabled');
 
@@ -176,7 +175,6 @@ function convertCurrencies() {
                 fetchFromLocal();
             }
 
-            console.log(json);
 
             const cur1 = json[fromCurrency];
             const cur2 = json[toCurrency];
