@@ -1,6 +1,6 @@
 const cacheName = 'currency-converter-v1';
 const api = 'https://free.currencyconverterapi.com/api/v5';
-const apiCountries = api + '/countries';
+const apiCountries = `${api}/countries`;
 const bootstrap = ['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'];
 const web = ['./', 'main.js', 'index.html', 'idb.js', 'countries-offline-default.json'];
 

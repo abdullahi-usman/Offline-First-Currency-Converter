@@ -15,7 +15,7 @@ function getCountries() {
 
                 for (const currency in json.results) {
 
-                    array[i++] = json.results[currency].currencyId + ' (' + json.results[currency].name + ')';
+                    array[i++] = `${json.results[currency].currencyId} (${json.results[currency].name})`;
 
                 }
 
@@ -27,8 +27,8 @@ function getCountries() {
                 let currenciesTo = '';
 
                 array.forEach(element => {
-                    currenciesFrom += '<li role="presentation"><a role="menuitem" href="javascript:currencySelectedFrom(\'' + element + '\')">' + element + '</a></li>';
-                    currenciesTo += '<li role="presentation"><a role="menuitem" href="javascript:currencySelectedTo(\'' + element + '\')">' + element + '</a></li>';
+                    currenciesFrom += `<li role="presentation"><a role="menuitem" href="javascript:currencySelectedFrom( '${element}' )"> ${element} </a></li>`;
+                    currenciesTo += `<li role="presentation"><a role="menuitem" href="javascript:currencySelectedTo( '${element}' )"> ${element} </a></li>`;
                 });
 
 
@@ -156,7 +156,7 @@ function convertCurrencies() {
     const convertButton = document.getElementById('convert')
     convertButton.setAttribute('disabled', 'disabled');
 
-    const url = "https://free.currencyconverterapi.com/api/v5/convert?q=" + fromCurrency + ',' + toCurrency + "&compact=ultra";
+    const url = `https://free.currencyconverterapi.com/api/v5/convert?q=${fromCurrency},${toCurrency}&compact=ultra`;
 
     fetch(url).then(response => {
         console.log(response);
