@@ -9,7 +9,7 @@ npm install
 npm start
 ```
 
-Open Chrome browser and go to `http:127.0.0.1:8778`
+Open Chrome browser and go to `http:127.0.0.1:8778` or `http://127.0.0.1:8778/`
 
 or
 
