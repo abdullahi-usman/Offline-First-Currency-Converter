@@ -1,5 +1,5 @@
 function getCountries() {
-    let countries = new URL('/api/v5/countries', window.location);
+    let countries = new URL('/api/v5/countries', 'https://free.currencyconverterapi.com');
     countries.protocol = 'https';
 
     fetch(countries.href).then((response) => {
