@@ -1,11 +1,14 @@
 const cacheName = 'currency-converter-v1';
-const api = 'https://free.currencyconverterapi.com/api/v5'
+const api = 'https://free.currencyconverterapi.com/api/v5';
 const apiCountries = api + '/countries';
+const bootstrap = ['https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'];
+const web = ['./', 'main.js', 'index.html', 'idb.js', 'countries-offline-default.json'];
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(cacheName).then(cache => {
-            return cache.addAll(['./', 'main.js', 'index.html', 'idb.js', 'countries-offline-default.json']);
+            cache.addAll(bootstrap);
+            return cache.addAll(web);
         })
     );
 
