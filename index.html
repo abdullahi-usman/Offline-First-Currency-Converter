@@ -2,109 +2,123 @@
 <html lang="en">
 
 <head title="Offline Currency Converter">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="idb.js"></script>
-    <script src="main.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="idb.js"></script>
+  <script src="main.js"></script>
 
-    <style>
-        .half-screen {
-            width: 50%;
-        }
+  <style>
+    .half-screen {
+      width: 100%;
+    }
 
-        .header-padding {
-            padding-top: 20px;
-            margin-top: 20px;
-        }
+    @media screen and (min-width: 500px) {
+      .half-screen {
+        width: 80%;
+      }
+    }
 
-        .scrollable-menu {
-            max-height: 100px;
-            overflow-y: scroll;
-        }
+    @media screen and (min-width: 800px) {
+      .half-screen {
+        width: 50%;
+      }
+    }
 
-        .message {
-            font-size: 10px;
-            color: blue
-        }
+    .header-padding {
+      padding-top: 20px;
+      margin-top: 20px;
+    }
 
-        .error {
-            font-size: 10px;
-            color: red
-        }
+    .scrollable-menu {
+      max-height: 100px;
+      overflow-y: scroll;
+    }
 
-        .info {
-            font-size: 10px;
-            color: green
-        }
+    .message {
+      font-size: 10px;
+      color: blue
+    }
 
-        .dropdown-menu-center {
-            float: initial;
-            right: 20%;
-            left: 20%;
-        }
+    .error {
+      font-size: 10px;
+      color: red
+    }
 
-    </style>
+    .info {
+      font-size: 10px;
+      color: green
+    }
+
+    .dropdown-menu-center {
+      float: initial;
+      right: 20%;
+      left: 20%;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="panel panel-default container half-screen header-padding">
-        <div class="panel panel-heading"><h3 align="center">Currency Converter</h3></div>
-        <div class="panel panel-body">
-            <div align="center">
-                <form class="form-inline">
+  <div class="panel panel-default container half-screen header-padding">
+    <div class="panel panel-heading">
+      <h3 align="center">Currency Converter</h3>
+    </div>
+    <div class="panel panel-body">
+      <div align="center">
+        <form class="form-inline">
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Amount" id="amount">
-                        <label for="amount" class="btn btn-default" id="result"> $0.00 </label>
-                    </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Amount" id="amount">
+            <label for="amount" class="btn btn-default" id="result"> $0.00 </label>
+          </div>
 
-                </form>
+        </form>
 
-                <br/>
+        <br/>
 
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="currencies-to-button">
-                        From (First Currency)
-                        <span class="caret"></span>
-                    </button>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="currencies-to-button">
+            From (First Currency)
+            <span class="caret"></span>
+          </button>
 
-                    <br/>
-                    <label for="currencies-to-button" id="currencies-from-label"></label>
+          <br/>
+          <label for="currencies-to-button" id="currencies-from-label"></label>
 
-                    <ul class="dropdown-menu dropdown-menu-center scrollable-menu" id="currencies-from" role="menu">
-                       
-                    </ul>
+          <ul class="dropdown-menu dropdown-menu-center scrollable-menu" id="currencies-from" role="menu">
 
-                </div>
+          </ul>
 
-                <br/>
-
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="currencies-to-button">
-                        To (Second Currency)
-                        <span class="caret"></span>
-                    </button>
-
-                    <br/>
-                    <label for="currencies-to-button" id="currencies-to-label"></label>
-
-                    <ul class="dropdown-menu dropdown-menu-center scrollable-menu" id="currencies-to" role="menu">
-
-                    </ul>
-
-                </div>
-
-                <br/>
-
-                <button class="btn btn-success" type="button" onclick="javascript:convertCurrencies()" id="convert">Convert</button>
-
-            </div>
         </div>
 
-        <label  class="error" id="message"></label>
+        <br/>
+
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="currencies-to-button">
+            To (Second Currency)
+            <span class="caret"></span>
+          </button>
+
+          <br/>
+          <label for="currencies-to-button" id="currencies-to-label"></label>
+
+          <ul class="dropdown-menu dropdown-menu-center scrollable-menu" id="currencies-to" role="menu">
+
+          </ul>
+
+        </div>
+
+        <br/>
+
+        <button class="btn btn-success" type="button" onclick="javascript:convertCurrencies()" id="convert">Convert</button>
+
+      </div>
     </div>
+
+    <label class="error" id="message"></label>
+  </div>
 </body>
 
 </html>
